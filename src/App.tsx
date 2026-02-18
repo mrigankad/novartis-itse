@@ -8,6 +8,7 @@ import { DataProvider } from "@/contexts/DataContext";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import Index from "./pages/Index";
 import Leaderboards from "./pages/Leaderboards";
+import Overview from "./pages/Overview";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -22,7 +23,8 @@ const App = () => (
             <Sonner />
             <BrowserRouter>
               <Routes>
-                <Route path="/" element={<Index />} />
+                <Route path="/" element={<Overview />} />
+                <Route path="/dashboard" element={<Index />} />
                 <Route path="/leaderboards" element={<Leaderboards />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>

@@ -12,7 +12,7 @@ import { Link, useLocation } from "react-router-dom";
 interface DashboardHeaderProps {
 }
 
-export function DashboardHeader({}: DashboardHeaderProps) {
+export function DashboardHeader({ }: DashboardHeaderProps) {
   const { filters } = useFilters();
   const [menuOpen, setMenuOpen] = useState(false);
   const [exporting, setExporting] = useState<"excel" | "pdf" | null>(null);
@@ -57,30 +57,33 @@ export function DashboardHeader({}: DashboardHeaderProps) {
       <div className="flex items-center gap-4 justify-between">
         <div className="flex items-center gap-4">
           <div className="flex items-center flex-shrink-0">
-          <img
-            src={Logo}
-            alt="Novartis Logo"
-            className="h-9 w-auto object-contain opacity-95 hover:opacity-100 transition-opacity"
-          />
-        </div>
-        <div>
-          <h1 className="text-xl lg:text-2xl font-bold text-foreground tracking-tight font-heading">
-            Novartis ITSE 
-          </h1>
-          <p className="text-sm text-muted-foreground mt-1">
-            ServiceNow Analytics • Novartis
-            {showGlobalSlicers && activeFiltersCount > 0 && (
-              <span className="ml-2 text-xs bg-primary/10 text-primary px-2 py-0.5 rounded">
-                {activeFiltersCount} filter{activeFiltersCount > 1 ? "s" : ""} active
-              </span>
-            )}
-          </p>
-        </div>
+            <img
+              src={Logo}
+              alt="Novartis Logo"
+              className="h-9 w-auto object-contain opacity-95 hover:opacity-100 transition-opacity"
+            />
+          </div>
+          <div>
+            <h1 className="text-xl lg:text-2xl font-bold text-foreground tracking-tight font-heading">
+              Novartis ITSE
+            </h1>
+            <p className="text-sm text-muted-foreground mt-1">
+              ServiceNow Analytics • Novartis
+              {showGlobalSlicers && activeFiltersCount > 0 && (
+                <span className="ml-2 text-xs bg-primary/10 text-primary px-2 py-0.5 rounded">
+                  {activeFiltersCount} filter{activeFiltersCount > 1 ? "s" : ""} active
+                </span>
+              )}
+            </p>
+          </div>
         </div>
 
         <div className="flex items-center gap-2">
           <Button asChild variant={location.pathname === "/" ? "default" : "outline"}>
-            <Link to="/">Dashboard</Link>
+            <Link to="/">Overview</Link>
+          </Button>
+          <Button asChild variant={location.pathname.startsWith("/dashboard") ? "default" : "outline"}>
+            <Link to="/dashboard">Dashboard</Link>
           </Button>
           <Button asChild variant={location.pathname.startsWith("/leaderboards") ? "default" : "outline"}>
             <Link to="/leaderboards">Leaderboards</Link>

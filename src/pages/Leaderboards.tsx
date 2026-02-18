@@ -142,12 +142,7 @@ export default function Leaderboards() {
 
   return (
     <div className="min-h-screen bg-dashboard-bg w-full pb-10 relative">
-      <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute -top-28 -left-24 h-80 w-80 rounded-full bg-primary/10 blur-3xl" />
-        <div className="absolute -top-24 right-0 h-80 w-80 rounded-full bg-primary/5 blur-3xl" />
-      </div>
-
-      <div className="w-full relative">
+      <div className="w-full">
         <div className="bg-card border-b border-border shadow-md w-full">
           <div className="w-full px-6 lg:px-10 py-5 lg:py-6">
             <DashboardHeader />
