@@ -9,10 +9,7 @@ import { useState } from "react";
 import { toast } from "@/hooks/use-toast";
 import { Link, useLocation } from "react-router-dom";
 
-interface DashboardHeaderProps {
-}
-
-export function DashboardHeader({ }: DashboardHeaderProps) {
+export function DashboardHeader() {
   const { filters } = useFilters();
   const [menuOpen, setMenuOpen] = useState(false);
   const [exporting, setExporting] = useState<"excel" | "pdf" | null>(null);

@@ -2,7 +2,6 @@ import { useMemo } from "react";
 import {
     BarChart3,
     Users,
-    Globe,
     Zap,
     ShieldAlert,
     TrendingUp,
